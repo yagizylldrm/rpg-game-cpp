@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <ctime>
-#define GFNAME "Defne"
+#define GFNAME "<3 Defne <3"
 using namespace std;
 
 class Entity
@@ -278,10 +278,9 @@ int main()
     int spawnRoll = (rand() % 100) + 1;
     Entity* enemy = nullptr;
 
-    if (spawnRoll <= 20)
+    if (spawnRoll <= 100)
     {
-        a = string("<3") + GFNAME + string("<3");
-        enemy = new Boss(a);
+        enemy = new Boss(GFNAME);
     }
     else
     {
@@ -308,16 +307,14 @@ int main()
         int action;
         cin >> action;
         if (action == 1)
-        {
             enemy->takeDamage(player->attack(), player);
-        }
         else if (action == 2)
             player->defend();
         else if (action == 3)
             player->healSelf();
-        else if (enemy->getName() == a && action == 4)
+        else if (enemy->getName() == GFNAME && action == 4)
         {
-            cout << "You gave" << a << " a compliment and she liked it. She spares you!" << endl;
+            cout << "You gave " << GFNAME << " a compliment and she liked it. She spares you!" << endl;
             printVictory(enemy, player);
             break;
         }
