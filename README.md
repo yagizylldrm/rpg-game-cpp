@@ -38,11 +38,11 @@ Since this is a standard C++ project, you can compile it using `g++` on any Linu
 
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/your-username/rpg-engine.git](https://github.com/your-username/rpg-engine.git)
-cd rpg-engine
+git clone https://github.com/yagizylldrm/rpg-game-cpp.git
+cd rpg-game-cpp
 
 # 2. Compile the source with optimizations
-g++ -O3 main.cpp -o rpg_game
+g++ -O3 rpggame.cpp -o rpggame
 
 # 3. Run the binary
-./rpg_game
+./rpggame
