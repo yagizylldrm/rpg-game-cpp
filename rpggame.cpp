@@ -278,7 +278,7 @@ int main()
     int spawnRoll = (rand() % 100) + 1;
     Entity* enemy = nullptr;
 
-    if (spawnRoll <= 100)
+    if (spawnRoll <= 20)
     {
         enemy = new Boss(GFNAME);
     }
