@@ -77,7 +77,7 @@ private:
     bool bigSlime;
 
 public:
-    Slime(bool a = true) : Entity(a ? "Big Slime" : "Little Slime", a ? 30 : 10, a ? 8 : 3, a ? 10 : 5, a ? 20 : 5) {}
+    Slime(bool a = true) : Entity(a ? "Big Slime" : "Little Slime", a ? 30 : 10, a ? 8 : 3, a ? 10 : 5, a ? 20 : 5), bigSlime(a) {}
 
     bool takeDamage(double a, Entity* attacker = nullptr) override
     {
@@ -112,7 +112,7 @@ public:
 
     double attack() override
     {
-        if ((rand() % 100) + 1 <= 20)
+        if ((rand() % 100) + 1 <= 30)
         {
             cout << "The Goblin goes into a frenzy! Double Attack!" << endl;
             return Entity::attack() + Entity::attack();
@@ -196,7 +196,6 @@ public:
     void print() override
     {
         Entity::print();
-        cout << "WARNING: RARE BOSS APPEARS!!!" << endl;
     }
 };
 
@@ -281,6 +280,7 @@ int main()
     if (spawnRoll <= 20)
     {
         enemy = new Boss(GFNAME);
+        cout << "WARNING: RARE BOSS APPEARS!!!" << endl;
     }
     else
     {
